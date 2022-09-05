@@ -42,9 +42,11 @@ const filteredCollection = computed(() => {
 <template>
   <div class="container">
     <Heading>Minha coleção</Heading>
-    <div class="tabs justify-center">
-      <a class="tab tab-lg tab-lifted tab-active">Padrão</a>
-      <a class="tab tab-lg tab-lifted">Extras</a>
+    <div class="flex flex-row justify-end mb-4">
+      <label for="filter-drawer" class="btn btn-primary">
+        <v-icon name="ri-search-line" class="mr-2"></v-icon>
+        Filtrar
+      </label>
     </div>
     <div class="p-2 mb-8 bg-base-300 rounded-xl">
       <Filter v-model="filters" :loading="isFiltering" />

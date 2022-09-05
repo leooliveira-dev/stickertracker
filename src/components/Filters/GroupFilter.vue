@@ -25,8 +25,8 @@ const getTooltip = (group: {name: string, countries?: string[]}) => !group.count
 </script>
 
 <template>
-<ul class="flex flex-row items-center gap-2">
-  <li v-for="group in groups" :key="group.name" class="tooltip tooltip-top" :data-tip="getTooltip(group)">
+<ul class="flex flex-col items-start gap-2">
+  <li v-for="group in groups" :key="group.name" class="tooltip tooltip-left" :data-tip="getTooltip(group)">
     <button :class="group.name === modelValue ? 'btn btn-primary' : 'btn'" @click="() => emits('update:modelValue', group.name)">
       <span class="flex flex-row items-center gap-1" v-if="group.countries">
         <Flag v-for="country in group.countries" :key="country" :country="country"/>
