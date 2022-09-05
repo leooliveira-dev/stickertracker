@@ -24,7 +24,7 @@ watch(inputs, (value) => { emits("update:modelValue", value) });
 <template>
   <Teleport to="#filter-drawer-container">
     <div class="flex flex-col items-center justify-center gap-4 my-4 overflow-visible">
-      <p class="prose-lg font-semibold">Filtros</p>
+      <h3 class="prose-lg font-semibold">Filtros</h3>
       <GroupFilter v-model="inputs.group"></GroupFilter>
       <StateFilter v-model="inputs.state"></StateFilter>
       <Loader v-if="loading"/>

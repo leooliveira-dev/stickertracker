@@ -18,7 +18,7 @@
     </footer>
   </div>
   <div class="drawer-side">
-    <label for="filter-drawer" class="drawer-overlay "></label>
+    <label for="filter-drawer" class="drawer-overlay"></label>
     <div id="filter-drawer-container" class="bg-base-300 overflow-visible px-4"></div>
   </div>
 </template>
