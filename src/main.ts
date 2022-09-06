@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import { maska } from 'maska';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import {
   RiCheckFill,
@@ -9,7 +10,8 @@ import {
   RiWhatsappLine,
   RiInstagramLine,
   RiFacebookCircleLine,
-  RiLoader2Fill
+  RiLoader2Fill,
+  RiMenuFill,
 } from "oh-vue-icons/icons";
 
 import router from "./pages/routes";
@@ -26,11 +28,13 @@ addIcons(
   RiWhatsappLine,
   RiInstagramLine,
   RiFacebookCircleLine,
-  RiLoader2Fill
+  RiLoader2Fill,
+  RiMenuFill,
 );
 
 createApp(App)
   .use(createPinia())
   .use(router)
   .component("v-icon", OhVueIcon)
+  .directive('maska', maska)
   .mount("#app");

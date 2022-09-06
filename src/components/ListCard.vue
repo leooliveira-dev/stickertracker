@@ -17,11 +17,16 @@ const copyToClipboard = () => {
       
     </div>
     <div class="collapse-content">
-      <button class="btn btn-secondary w-full mb-4 tooltip tooltip-top" data-tip="Copiar lista" @click="copyToClipboard">
-        <v-icon name="ri-file-copy-line"></v-icon>
-        Copiar Lista
-      </button>
-      <CodeGrid :stickers="stickers"/>
+      <div v-if="stickers.length > 0">
+        <button class="btn btn-secondary w-full mb-4 tooltip tooltip-top" data-tip="Copiar lista" @click="copyToClipboard">
+          <v-icon name="ri-file-copy-line"></v-icon>
+          Copiar Lista
+        </button>
+        <CodeGrid :stickers="stickers"/>
+      </div>
+      <div v-else>
+        Não há nenhuma figurinha marcada.
+      </div>
     </div>
   </div>
 </template>

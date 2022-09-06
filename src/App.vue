@@ -1,15 +1,17 @@
+<script setup lang="ts">
+import Menu from "./components/Menu.vue";
+</script>
+
 <template>
   <input type="checkbox" id="filter-drawer" class="drawer-toggle">
   <div class="drawer-content min-h-screen flex flex-col items-center justify-between overflow-y-scroll">
-    <header class="navbar justify-between bg-base-300">
-      <h1 class="prose prose-h1">Sticker tracker</h1>
-      <nav class="">
-        <ul class="flex items-center gap-4">
-          <li><router-link to="/">Início</router-link></li>
-          <li><router-link to="/profile">Meu perfil</router-link></li>
-          <li><router-link to="/collection">Minha coleção</router-link></li>
-        </ul>
-      </nav>
+    <header class="w-full">
+      <div class="flex flex-row items-center py-4 justify-center bg-base-300 w-full">
+        <h1 class="text-lg font-bold">Sticker tracker</h1>
+      </div>
+      <div class="flex flex-row items-center py-2 justify-center bg-base-100 w-full">
+        <Menu/>
+      </div>
     </header>
     <main class="flex-grow bg-base-200 w-full">
       <router-view></router-view>

@@ -32,7 +32,7 @@ const handleSpareInput = (event: Event) => {
     <div class="card-body flex flex-row items-center overflow-visible">
       <Flag :country="sticker.country ?? ''"></Flag>
       <p class="card-title text-white">{{ sticker.code }}</p>
-      <p>{{ sticker.name }}</p>
+      <p class="hidden sm:block">{{ sticker.name }}</p>
       <ul class="flex flex-row items-center gap-4">
         <li class="tooltip tooltip-top" data-tip="Tenho">
           <button

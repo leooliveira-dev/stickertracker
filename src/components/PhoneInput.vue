@@ -3,7 +3,6 @@ import { computed, ref, watch } from "vue";
 
 const props = defineProps<{
   modelValue: string;
-  type?: string;
   name: string;
 }>();
 const emits = defineEmits(["update:modelValue"]);
@@ -16,6 +15,8 @@ watch(
   (value) => (input.value = value),
   { immediate: true }
 );
+
+const mask = ["+55 (##) ####-####", "+55 (##) #####-####"];
 </script>
 
 <template>
@@ -23,8 +24,9 @@ watch(
     <label :for="name" class="label"><slot></slot></label>
     <input
       :name="name"
-      :type="type ?? 'text'"
+      type="tel"
       class="input w-full"
+      v-maska="mask"
       v-model="input"
     />
   </div>

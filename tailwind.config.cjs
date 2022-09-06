@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem'
+      padding: '1rem',
     }
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require("daisyui")],

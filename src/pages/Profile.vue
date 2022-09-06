@@ -6,6 +6,7 @@ import { isEqual } from 'lodash';
 import Heading from '../components/Heading.vue';
 import { useStore } from '../store';
 import TextInput from '../components/TextInput.vue';
+import PhoneInput from '../components/PhoneInput.vue';
 
 const store = useStore();
 const { userData } = storeToRefs(store);
@@ -30,7 +31,7 @@ const isDataTheSame = computed(() => isEqual(userData.value, inputs))
     <Heading>Meu perfil</Heading>
     <form @submit.prevent="handleSubmit" novalidate class="grid grid-cols-1 gap-2">
       <TextInput name="name" v-model="inputs.name">Nome</TextInput>
-      <TextInput name="whatsapp" v-model="inputs.contact.whatsapp">WhatsApp</TextInput>
+      <PhoneInput name="whatsapp" v-model="inputs.contact.whatsapp">WhatsApp</PhoneInput>
       <TextInput name="instagram" v-model="inputs.contact.instagram">Instagram</TextInput>
       <TextInput name="facebook" v-model="inputs.contact.facebook">Facebook</TextInput>
       <button type="submit" class="btn" :class="isDataTheSame ? 'btn-disabled' : 'btn-primary'" :disabled="isDataTheSame">Salvar perfil</button>
