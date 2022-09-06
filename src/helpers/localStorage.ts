@@ -20,4 +20,3 @@ export const getLocalProfile = (): Profile => {
 export const saveLocalProfile = (profile: Profile) => {
   localStorage.setItem("profile", JSON.stringify(profile));
 }
-
