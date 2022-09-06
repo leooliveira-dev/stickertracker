@@ -24,9 +24,18 @@ const copyToClipboard = (stickers: Sticker[]) => {
       {{ userData.name ? `Perfil de ${userData.name}` : `Perfil` }}
       <template v-slot:socials>
         <ul class="flex flex-row items-center gap-2">
-          <li><v-icon name="ri-whatsapp-line"></v-icon></li>
-          <li><v-icon name="ri-instagram-line"></v-icon></li>
-          <li><v-icon name="ri-facebook-circle-line"></v-icon></li>
+          <li>
+            <a v-if="userData.contact.whatsapp" :href="userData.contact.whatsapp" target="_blank"><v-icon name="ri-whatsapp-line"></v-icon></a>
+            <v-icon v-else name="ri-whatsapp-line"></v-icon>
+          </li>
+          <li>
+            <a v-if="userData.contact.instagram" :href="userData.contact.instagram" target="_blank"><v-icon name="ri-instagram-line"></v-icon></a>
+            <v-icon v-else name="ri-instagram-line"></v-icon>
+          </li>
+          <li>
+            <a v-if="userData.contact.facebook" :href="userData.contact.facebook" target="_blank"><v-icon name="ri-facebook-circle-line"></v-icon></a>
+            <v-icon v-else name="ri-facebook-circle-line"></v-icon>
+          </li>
         </ul>
       </template>
     </Heading>
