@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, reactive, ref } from "vue";
+import { stringifyQuery } from "vue-router";
 
 import stickers from "./content/stickers.json";
 import { getLocalProfile, saveLocalProfile } from "./helpers/localStorage";
@@ -65,6 +66,12 @@ export const useStore = defineStore("store", () => {
     saveLocalProfile(profile);
   };
 
+  const updateProfile = (info: {name: string, contact: { whatsapp: string, instagram: string, facebook: string }}) => {
+    profile.name = info.name;
+    profile.contact = info.contact;
+    saveLocalProfile(profile);
+  }
+
   return {
     allStickers,
     userData,
@@ -73,5 +80,6 @@ export const useStore = defineStore("store", () => {
     needed,
     updateCollection,
     changeSpareAmount,
+    updateProfile,
   };
 });

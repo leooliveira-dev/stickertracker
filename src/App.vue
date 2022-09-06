@@ -6,6 +6,7 @@
       <nav class="">
         <ul class="flex items-center gap-4">
           <li><router-link to="/">Início</router-link></li>
+          <li><router-link to="/profile">Meu perfil</router-link></li>
           <li><router-link to="/collection">Minha coleção</router-link></li>
         </ul>
       </nav>
