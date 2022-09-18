@@ -34,11 +34,11 @@ const subtractSpare = () => {
     class="card card-compact mb-2 overflow-hidden"
     :class="sticker.marked ? 'bg-primary' : 'bg-base-100'"
   >
-    <div class="card-body grid grid-cols-3 items-center">
-      <div v-if="isFoil" class="foil absolute left-0 h-full w-32"></div>
+    <div class="card-body grid grid-cols-2 sm:grid-cols-3 items-center">
+      <div v-if="isFoil" class="foil absolute left-0 h-full w-1 sm:w-32"></div>
       <div class="relative flex flex-row items-center gap-2">
         <Flag :country="sticker.country ?? ''"></Flag>
-        <p class="card-title" :class="isFoil ? 'text-base-300 font-bold' : 'text-white'">{{ sticker.code }}</p>
+        <p class="card-title" :class="isFoil ? 'text-white sm:text-base-300 sm:font-bold' : 'text-white'">{{ sticker.code }}</p>
       </div>
       <p class="hidden sm:block justify-self-center">{{ sticker.name }}</p>
       <ul class="flex flex-row items-center gap-4 justify-self-end">
