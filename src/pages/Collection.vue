@@ -42,7 +42,7 @@ const filteredCollection = computed(() => {
 <template>
   <div class="container">
     <Heading>Minha coleção</Heading>
-    <div class="flex flex-row justify-end mb-4">
+    <div class="flex flex-row justify-end mb-4 pt-4 sticky top-0 z-50">
       <label for="filter-drawer" class="btn btn-primary">
         <v-icon name="ri-search-line" class="mr-2"></v-icon>
         Filtrar
