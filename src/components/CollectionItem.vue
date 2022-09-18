@@ -10,6 +10,7 @@ const props = defineProps<{
 const emits = defineEmits(["add", "remove", "update:spareAmount"]);
 
 const counter = ref<number>(0);
+const isFoil = props.sticker.name.includes("FOIL");
 
 watch(
   () => props.sticker.spareAmount,
@@ -26,14 +27,17 @@ const handleSpareInput = (event: Event) => {
 </script>
 <template>
   <div
-    class="card card-compact mb-2 overflow-visible"
+    class="card card-compact mb-2 overflow-hidden"
     :class="sticker.marked ? 'bg-primary' : 'bg-base-100'"
   >
-    <div class="card-body flex flex-row items-center overflow-visible">
-      <Flag :country="sticker.country ?? ''"></Flag>
-      <p class="card-title text-white">{{ sticker.code }}</p>
-      <p class="hidden sm:block">{{ sticker.name }}</p>
-      <ul class="flex flex-row items-center gap-4">
+    <div class="card-body grid grid-cols-3 items-center overflow-hidden">
+      <div v-if="isFoil" class="foil absolute left-0 h-full w-32"></div>
+      <div class="relative flex flex-row items-center gap-2">
+        <Flag :country="sticker.country ?? ''"></Flag>
+        <p class="card-title" :class="isFoil ? 'text-base-300 font-bold' : 'text-white'">{{ sticker.code }}</p>
+      </div>
+      <p class="hidden sm:block justify-self-center">{{ sticker.name }}</p>
+      <ul class="flex flex-row items-center gap-4 justify-self-end">
         <li class="tooltip tooltip-top" data-tip="Tenho">
           <button
             class="btn btn-circle"

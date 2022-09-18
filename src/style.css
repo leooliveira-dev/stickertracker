@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.foil {
+  @apply bg-gradient-to-r from-yellow-500 via-yellow-100 to-yellow-400 
+}
+
+.foil-text {
+  @apply font-bold text-base-300;
+}
