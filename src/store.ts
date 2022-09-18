@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { computed, reactive, ref } from "vue";
-import { stringifyQuery } from "vue-router";
 
 import stickers from "./content/stickers.json";
 import { getLocalProfile, saveLocalProfile } from "./helpers/localStorage";

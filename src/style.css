@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.foil {
+  @apply bg-gradient-to-r from-yellow-500 via-yellow-100 to-yellow-400 
+}
+
+.foil-to-transparent {
+  @apply bg-gradient-to-r from-yellow-500 via-yellow-200 to-transparent
+}
+
+.foil-text {
+  @apply font-bold text-base-300;
+}
